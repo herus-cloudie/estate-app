@@ -1,4 +1,5 @@
-
+import './reset.css'
+import './global.css'
 
 export const metadata = {
   title: "Create Next App",
@@ -7,8 +8,27 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html dir='rtl'>
+      <body>
+        <header className="header">
+            <div className="header-brand">
+                <div className="header-name">املاک مسلمی</div>
+                <img className="brand-img" src="/icon/home.png"/>
+            </div>
+            <div className="header-option">
+                <div className="option-text-group" >
+                    <a href="#" className="option-text">اگهی ها</a>
+                    <a href="#" className="option-text">درباره ما</a>
+                    <a href="#" className="option-text">تماس با ما</a>
+                </div>
+                <button className="login-btn">
+                    <span>ورود / ثبت نام</span>
+                    <img className="login-img" src="/icon/enter.png"/>
+                </button>
+            </div>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,4 +1,6 @@
+import HomePage from '@/component/template/homepage'
+import './global.css'
 
 export default function Home() {
-  return <h2>hello</h2>
+  return <HomePage />
 }
