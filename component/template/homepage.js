@@ -1,13 +1,20 @@
-import BtnOne from "../module/btnOne";
 
-export default function HomePage(){
+import Session from "@/utils/session";
+import BtnOne from "../module/btnOne";
+import NavOption from "../module/navOption";
+import TitleHeader from "../module/titleHeader";
+
+export default async function HomePage(){
+
     return(
         <div className="container" dir="rtl">
+            <header className="header">
+                <TitleHeader title={'املاک مسلمی'} img={'home'}/>
+                <NavOption session={await Session()}/>
+            </header>
             <main className="hero">
                 <div>
                     <h1 className="hero-h1">خرید , فروش  و اجاره املاک مسلمی</h1>
-                    {/* <h6 className="hero-h6">سریع تر از اونی که فکر کنی معامله انجام میشه!</h6> */}
-                    <img src="https://s3-alpha-sig.figma.com/img/4b7d/fe9e/d251f29c3c445300aa1ad82a9a394b64?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CrIaX1fBpuTEpNPB9RIxIprbOovzaIdm1dysx60aQs1ftX7Kcwa~vIMlEYr3TiP~udgArRn4NjxzeIRdoaKUxW5BCtya1tYbK8WKJYr0JUxcsSwtOqK8S-kqtRIiakJIcSI7DUcjFGdqib-DFJjmaXefXAbJqaubwzOBWyiAD6L7cwkZJ10HeE7Q4bkSXx2HJ6z04CKDCoYy1iZlcaIUE-Wtareqx7shSTP9vmzEiHdr6Bd23y0~bEv1CrKSnmwqqEiCwn1t9TYkgt3zhePzdZiQ2KgUrtmwJPZJsg9OMtjCnC6vIk9fb~1FSiGNqCrnRWjUJitgbxeA0SPKGbBnJg__" className="hero-little-img"/>
                 </div>
                 <img src="/image/heroimg.png" className="hero-img" />
                 <div className="boble one"><p className="text-one">سریع</p></div>
@@ -54,12 +61,10 @@ export default function HomePage(){
             <div className="add-adv">
                 <img className="adv-img" src='/image/advertising.png'/>
                 <h4 className="adv-text">رایگان اگهی ثبت کن!</h4>
-                <div className="adv-column"/>
                 <h5 className="adv-left-text">اگهی شما را هزاران نفر خواهند دید </h5>
                 <BtnOne className='advbutton' classNameTwo='advbuttonTwo' text={"ثبت اگهی"}/>
             </div>
-
-            <div className="info">
+            <div className="info" id="info">
                 <div className="right">
                     <div>
                         <h3>ارتباط با ما</h3>
@@ -86,7 +91,6 @@ export default function HomePage(){
                     </div>
                 </div>
             </div>
-
             <footer className="footer">
                 <div className="footer-text">
                     <p>کلیات حقوق وبسایت متعلق به امیرمحمد مسلمی میباشید</p>
