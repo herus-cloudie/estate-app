@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect, useState } from "react";
 import Card from "../module/card";
 import FilterSession from "../module/filterSession";
@@ -20,7 +19,7 @@ export default function BuyResidentialPage({PublishedAdv}){
     
     function filteringByCategory(){
         if(filter.category == 'all' || filter.category == '') {
-
+            console.log(filter.category )
             if(!filter.rent && !filter.sale) setFilterAdv(PublishedAdv)
             else if(filter.rent && filter.sale) setFilterAdv(PublishedAdv)
             else if(!filter.rent && filter.sale) setFilterAdv(filteredAdv.filter(item => item.rent == null))

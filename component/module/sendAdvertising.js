@@ -55,7 +55,7 @@ export default function SendAdvertisement({advertisementData , setAdvertisementD
         console.log(data)
             
         if(data.status == 'success') {
-            router.push('/dashboard/myadv')
+            router.push('/dashboard/myAdv')
         };  
         
     }

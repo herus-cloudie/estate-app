@@ -69,3 +69,15 @@ export async function DELETE(req) {
     return NextResponse.json({status : 'success' , message : 'the Advertise deleted'} , {status : 200})
 }
  
+export async function GET(req) {
+    try {
+        await ConnectDataBase()
+    } catch (err) {
+        return  NextResponse.json({status : 'faild' , message : 'problem at connecting to Data-base'} , {status : 500})
+    } 
+    let allAdv = await Advertisement.find({})
+    let PublishedAdv = allAdv.filter(adv => adv.publish == true)
+
+    return NextResponse.json({status : 'success' ,  data : PublishedAdv} , {status : 200})
+}
+ 

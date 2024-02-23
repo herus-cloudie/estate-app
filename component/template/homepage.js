@@ -1,24 +1,28 @@
+import { BiMenu } from "react-icons/bi";
 
 import Session from "@/utils/session";
 import BtnOne from "../module/btnOne";
 import NavOption from "../module/navOption";
 import TitleHeader from "../module/titleHeader";
+import Link from "next/link";
 
 export default async function HomePage(){
 
     return(
         <div className="container" dir="rtl">
+
             <header className="header">
                 <TitleHeader title={'املاک مسلمی'} img={'home'}/>
                 <NavOption session={await Session()}/>
+                <div className="menu-img"><BiMenu /></div>
             </header>
             <main className="hero">
-                <div>
-                    <h1 className="hero-h1">خرید , فروش  و اجاره املاک مسلمی</h1>
+                <h1 className="hero-h1">خرید , فروش  و اجاره املاک مسلمی</h1>
+                <div className="tree-section">
+                    <img src="/image/heroimg.png" className="hero-img" />
+                    <div className="boble one"><p className="text-one">سریع</p></div>
+                    <div className="boble two"><p className="text-two">مطمئن</p></div>
                 </div>
-                <img src="/image/heroimg.png" className="hero-img" />
-                <div className="boble one"><p className="text-one">سریع</p></div>
-                <div className="boble two"><p className="text-two">مطمئن</p></div>
             </main>
             <div className="third">
                 <div className="right">
@@ -28,12 +32,12 @@ export default async function HomePage(){
                 </div>
                 <div className="left">
                     <div className="box-right">
-                        <BtnOne className='right' text='اجاره خانه'/>
+                        <Link href={'/dashboard/add'}> <BtnOne className='right' text='ثبت آگهی'/> </Link>
                         <img className="box-right-img" src="/image/homeonhand.png"/>
                     </div>
                     <div className="box-left">
                         <img className="box-left-img" src="/image/key.png"/>
-                        <BtnOne className='left' text='خرید خانه'/>
+                        <Link href={'/buy-residential'}> <BtnOne className='left' text='دیدن اگهی'/> </Link>
                     </div>
                 </div>
             </div>
@@ -42,7 +46,7 @@ export default async function HomePage(){
                     <div className="comment-label-text">نظرات کاربران</div>
                     <img src="/icon/comment.png" className="comment-label-img" />
                 </div>
-                <div>
+                <div className="comment-group">
                     <div className="column"/>
 
                     <div className="comment-body first-comment">
@@ -58,12 +62,6 @@ export default async function HomePage(){
                     </div>
                 </div>
             </div>
-            <div className="add-adv">
-                <img className="adv-img" src='/image/advertising.png'/>
-                <h4 className="adv-text">رایگان اگهی ثبت کن!</h4>
-                <h5 className="adv-left-text">اگهی شما را هزاران نفر خواهند دید </h5>
-                <BtnOne className='advbutton' classNameTwo='advbuttonTwo' text={"ثبت اگهی"}/>
-            </div>
             <div className="info" id="info">
                 <div className="right">
                     <div>
@@ -78,16 +76,6 @@ export default async function HomePage(){
                         <a href="https://linkedin.com/in/amirmohammad-moslemi" className="linkedin"><div className="linkedin-text">in</div></a>
                         <a href="https://github.com/herus-cloudie" className="github"><img src="/icon/github.png" className="github-text"/></a>
                         <a href="https://t.me/Herus_soll" className="telegram"><img src="/icon/telegram.png" className="telegram-text"/></a>
-                    </div>
-                </div>
-                <div className="columnn"/>
-                <div className="left">
-                    <div>
-                        <h3>درباره ما</h3>
-                        <img src="/icon/info.png" className="info-img" />
-                    </div>
-                    <div>
-                        <p>این شرکت در سال 1397 تاسیس و ثبت شد تیم ما همواره در تلاش هستش تا بتواند بستری برای خرید و فروش و اجاره ملک را با خیالی آسوده با اطمینان بالا فراهم کند.</p>
                     </div>
                 </div>
             </div>
