@@ -18,8 +18,6 @@ export default async function DashboardLayout({children}){
     await ConnectDataBase()
     let session = await Session()
     if(!session) redirect('/signup')
-    const headersList = headers();
-    const fullUrl = headersList.get('referer') || "";
     let user = await UserEstate.findOne({email : session.user?.email})
     return(
         <div className="bg-dashboard-color">
@@ -30,11 +28,11 @@ export default async function DashboardLayout({children}){
                         <a href="/" className="option-text">صفحه اصلی</a>
                         <a href="/buy-residential" className="option-text">آگهی ها</a>
                     </div>
-                    <HamburgerMenu />
+                    <HamburgerMenu session={user.role}/>
                 </div>
                 
             </header>
-            <aside>
+            <aside style={user.role != 'ADMIN' ? {height : '460px'} : null}>
                 <div className="profile-dash">
                     <CgProfile />
                     {user.role == 'ADMIN' ?

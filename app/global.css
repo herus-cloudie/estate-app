@@ -40,7 +40,7 @@
 }
 .bg-dashboard-color{
   background: #b4b4b48a;
-  min-height: 300vh;
+  min-height: 2000px;
 }
 .bg-adv-color{
   background: #b4b4b48a;
@@ -2718,7 +2718,7 @@ aside svg{
 }
 @media (max-width : 650px) {
   .bg-dashboard-color {
-    min-height: 220vh;
+    min-height: 2500px;
 }
   .box-left {
     top: 80px;
