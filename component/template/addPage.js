@@ -65,7 +65,7 @@ export default function AddPage({adv}){
     }
       
     return(
-        <div>
+        <div className="fix-transaction">
             {
                 adv ? <h3 className="dashboard-title add-title-2"><BsFillPencilFill />ویرایش اگهی</h3> 
                 : <h3 className="dashboard-title add-title-2"><VscDiffAdded />ثبت آگهی جدید</h3>
@@ -120,7 +120,7 @@ export default function AddPage({adv}){
 
 
 
-                <div> 
+                <div style={{widows : '270px'}}> 
                     <div>
                         <h3 className="dashboard-title-2 add-title"><ImMug />امکانات رفاهی</h3>
                         <TextList name='amenities' advertisementData={advertisementData} setAdvertisementData={setAdvertisementData}/>

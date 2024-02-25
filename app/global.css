@@ -40,7 +40,7 @@
 }
 .bg-dashboard-color{
   background: #b4b4b48a;
-  min-height: 100vh;
+  min-height: 160vh;
 }
 .bg-adv-color{
   background: #b4b4b48a;
@@ -1734,6 +1734,7 @@ aside svg{
     border-radius: 5px;
     color: white;
     font-size: 19px;
+    line-height: 28px;
 }
 .success-notif{
   background-color: #0b9a20 !important;
@@ -2298,6 +2299,50 @@ aside svg{
 
 }
 @media (max-width : 1000px) {
+  .notif-group {
+    position: unset;
+    margin-top: 150px;
+}
+  .add-title-2 {
+    position: absolute;
+    top: 140px;
+    right: 50px;
+    color: #333;
+    font-size: 25px;
+    font-family: 'normalVazir';
+    display: flex;
+    gap: 15px;
+    font-size: 30px !important;
+}
+.text-group {
+  position: absolute;
+  top: 0px;
+  margin-right: 50px;
+  margin-top: 250px;
+  right: 0px;
+}
+  .fix-transaction{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 358px;
+    align-items: center;
+  }
+
+.dashboard-transaction-group {
+    position: unset;
+}
+  .dashboard-text-group {
+    height: 295px;
+    position: unset;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
   .dashboard-card-group {
     position:unset ;
     display: flex;
@@ -2339,7 +2384,7 @@ aside svg{
     justify-content: flex-start;
     display: flex;
     margin-right: 20px;
-    width: 260px;
+    width: 230px;
     height: 71px;
   }
   .header-name {
@@ -2466,7 +2511,10 @@ aside svg{
   padding: 15px 26px;
   font-size: 1.8rem;
 }
+
 }
+
+
 @media (max-width : 850px) {
   .detaile-container {
     padding: 200px 50px;
@@ -2669,6 +2717,9 @@ aside svg{
 }
 }
 @media (max-width : 650px) {
+  .bg-dashboard-color {
+    min-height: 220vh;
+}
   .box-left {
     top: 80px;
     left: -350px;
@@ -2687,7 +2738,39 @@ aside svg{
   margin-top: 0px;
 }
 }
+@media (max-width : 610px) {
+
+
+  .radios {
+    display: flex;
+    margin-left: 0px;
+}
+
+  .textarea-textInput {
+    width: 140px;
+    height: 150px;
+    margin-right: 29px;
+}
+
+}
 @media (max-width : 550px) {
+  .card-textlist input {
+    width: 161px;
+}
+  .addadvertisement {
+    padding: 10px 100px !important;
+}
+  .radios {
+    display: flex;
+    margin-left: 105px;
+    margin-right: 40px;
+    flex-wrap: wrap;
+}
+  .textarea-textInput {
+    width: 140px;
+    height: 150px;
+    margin-right: 0px;
+}
   .detaile-container {
     padding: 130px 50px;
   }
@@ -2754,6 +2837,9 @@ aside svg{
 }
 }
 @media (max-width : 500px) {
+  .radios {
+    margin-left: 60px;
+}
   .residential-group {
     padding: 0;
     padding-top: 60px;
@@ -2829,6 +2915,13 @@ aside svg{
 }
 
 @media (max-width : 460px) {
+  .add-title-2 {
+    position: absolute;
+    right: 20px;
+}
+  .text-group {
+    margin-right: 30px;
+}
   .adv-date {
     position: absolute;
     top: 230px;
@@ -2921,20 +3014,13 @@ aside svg{
     position: absolute;
     left: 85px;
 }
-  .header {
-    height: 50px;
-}
-.header-name {
-  font-size: 18px;
-}
+
+
 .brand-img {
   width: 25px;
   height: 25px;
 }
-.header-brand {
-  width: 180px;
-  height: 51px;
-}
+
 
   .boble.two {
     position: absolute;
@@ -2958,6 +3044,10 @@ aside svg{
   }
 }
 @media (max-width : 400px) {
+  .radios {
+    margin-left: 0px;
+    margin-right: 23px;
+}
   .network {
     width: 30px;
     height: 30px;
@@ -3076,6 +3166,16 @@ aside svg{
 }
 
 @media (max-width : 370px) {
+  .addadvertisement {
+    padding: 10px 85px !important;
+}
+.text-group {
+  margin-right: 20px;
+}
+  .dashboard-text {
+    width: 290px;
+    text-align: center;
+  }
   .info .right p {
     top: 178px;
     left: 70px;

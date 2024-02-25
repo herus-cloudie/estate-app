@@ -2,7 +2,7 @@
 import DashboardCard from "@/component/module/dashboardCard"
 
 export default async function ExpectPage({expectToConfirm}){
-    
+    console.log(expectToConfirm)
     return(
         <div className="dashboard-card-group">
             {

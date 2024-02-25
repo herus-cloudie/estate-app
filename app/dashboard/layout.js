@@ -1,6 +1,7 @@
 
 
 import AsideText from "@/component/module/asideText"
+import DashboardDynamicHead from "@/component/module/dashboardDynamicHead"
 import HamburgerMenu from "@/component/module/hamburgerMenu"
 import LogOut from "@/component/module/logout"
 import TitleHeader from "@/component/module/titleHeader"
@@ -8,6 +9,7 @@ import ConnectDataBase from "@/utils/connectDataBase"
 import { UserEstate } from "@/utils/model"
 
 import Session from "@/utils/session"
+import { cookies, headers } from "next/headers"
 import { redirect } from "next/navigation"
 
 import { CgProfile } from 'react-icons/cg'
@@ -16,12 +18,13 @@ export default async function DashboardLayout({children}){
     await ConnectDataBase()
     let session = await Session()
     if(!session) redirect('/signup')
-    
+    const headersList = headers();
+    const fullUrl = headersList.get('referer') || "";
     let user = await UserEstate.findOne({email : session.user?.email})
     return(
-        <div>
+        <div className="bg-dashboard-color">
             <header className="header">
-                <TitleHeader title={'داشبورد'} img={'dashboard'}/>
+                <DashboardDynamicHead />
                 <div className="header-option">
                     <div className="option-text-group" >
                         <a href="/" className="option-text">صفحه اصلی</a>
@@ -46,7 +49,7 @@ export default async function DashboardLayout({children}){
                 }
                 <AsideText />
             </aside>
-            <div className="bg-dashboard-color">
+            <div>
                 {children}
             </div>
         </div>
