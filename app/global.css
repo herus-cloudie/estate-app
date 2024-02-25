@@ -14,9 +14,37 @@
     background-color: #5db8cd;
     height: 120vh;
 }
+.menu-close{
+  display: none;
+}
+.menu-close-img svg {
+  width: 50px;
+  height: 50px;
+  margin-top: -80px;
+  padding-left: 5px;
+  color: white;
+}
+.menu-open {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #333333;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  justify-content: space-evenly;
+}
 .bg-dashboard-color{
   background: #b4b4b48a;
-  height:250vh ;
+  min-height: 100vh;
+}
+.bg-adv-color{
+  background: #b4b4b48a;
+  min-height: 100vh;
 }
 .menu-img svg {
   display: none;
@@ -66,6 +94,11 @@
     width: 260px;
     height: 71px;
     background-color: #FFF;
+}
+.option-group{
+  display: flex;
+  width: 260px;
+  justify-content: space-between;
 }
 .header-option-text{
     color: #FFF;
@@ -327,7 +360,9 @@ a{
   }
 
 .login-btn {
-    margin-left: 30px;
+    position: absolute;
+    top: 11px;
+    left: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -1284,13 +1319,14 @@ aside svg{
   word-break: break-word;
   flex: 1 1;
 }
-.no-adv{
-    background: #ff737333;
-    padding: 20px;
-    color: #ab0000;
-    border-radius: 10px;
-    font-family: 'normalVazir';
-    font-size: 22px;
+.no-adv {
+  background: #ff737333;
+  padding: 20px;
+  color: #ab0000;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'normalVazir';
+  font-size: 22px;
 }
 .dashboard-card-container {
   background-color: white;
@@ -1554,7 +1590,13 @@ aside svg{
 .detaile-main {
   width: 100%;
 }
-
+.detaile-sidebar div {
+  box-shadow: #304ffe4a 0px 4px 15px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  min-width: 230px;
+}
 .detaile-main h1 {
   color: #304ffe;
   font-size: 1.3rem;
@@ -1588,12 +1630,6 @@ aside svg{
   margin-right: 40px;
 }
 
-.detaile-sidebar div {
-  box-shadow: #304ffe4a 0px 4px 15px;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
 
 .detaile-realState {
   display: flex;
@@ -2144,7 +2180,10 @@ aside svg{
   left: 400px;
   position: absolute;
 }
-
+.filter-group{
+  display: flex;
+  gap: 10px;
+}
 @media (max-width : 1300px) {
   .adv-text {
     right: 219px;
@@ -2259,97 +2298,151 @@ aside svg{
 
 }
 @media (max-width : 1000px) {
-  .menu-img svg {
-    display: block;
+  .dashboard-card-group {
+    position:unset ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+  .bg-dashboard-color {
+    display: flex;
+    justify-content: center;
+}
+  .dashboard-card-main {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+  .dashboard-card-container {
+    width: 280px;
+    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+.dashboard-card-group .card-container {
+    width: 220px;
+}
+  .dashboard-card-group {
+    margin-top: 100px;
+}
+  .header-brand {
+    background-color: rgba(0, 0, 0, 0);
   }
-  .adv-text {
-    right: 152px;
-    top: 2490px;
+  aside{
+    display: none;
+  }
+  .header-brand {
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    margin-right: 20px;
+    width: 260px;
+    height: 71px;
+  }
+  .header-name {
+    color: white;
+    font-weight: 100;
+  }
+  .brand-img {
+    display: none;
+  }
+    .menu-img svg {
+      display: block;
+    }
+    .adv-text {
+      right: 152px;
+      top: 2490px;
+      position: absolute;
+  }
+  .adv-left-text {
+    top: 2440px;
     position: absolute;
-}
-.adv-left-text {
-  top: 2440px;
-  position: absolute;
-  left: 80px;
-}
-  .adv-img {
-    right: 67px;
-    top: 2375px;
+    left: 80px;
+  }
+    .adv-img {
+      right: 67px;
+      top: 2375px;
+      position: absolute;
+  }
+  .advbutton {
+    top: 2655px;
+    left: 140px;
     position: absolute;
-}
-.advbutton {
-  top: 2655px;
-  left: 140px;
-  position: absolute;
-}
-  .boble.one {
+  }
+    .boble.one {
+      position: absolute;
+      top: 210px !important;
+      left: 50px !important;
+  }
+  .boble.two {
     position: absolute;
-    top: 210px !important;
-    left: 50px !important;
-}
-.boble.two {
-  position: absolute;
-  top: 225px !important;
-  left: 370px !important;
-}
+    top: 225px !important;
+    left: 370px !important;
+  }
+    .hero-img {
+      width: 500px;
+      /* height: 490px; */
+      position: absolute;
+      left: 0;
+      top: 130px;
+    }
+    .text-two {
+      position: absolute;
+      top: 21px !important;
+      left: 9px !important;
+  }
+  .text-one {
+    position: absolute;
+    top: 20px !important;
+    left: 16px !important;
+  }
+  .boble {
+    background-color: rgba(255, 255, 255, 0.52);
+    width: 70px;
+    height: 70px;
+    color: #1ED500;
+    border-radius: 100px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
   .hero-img {
     width: 500px;
-    /* height: 490px; */
-    position: absolute;
-    left: 0;
-    top: 130px;
-  }
-  .text-two {
-    position: absolute;
-    top: 21px !important;
-    left: 9px !important;
-}
-.text-one {
-  position: absolute;
-  top: 20px !important;
-  left: 16px !important;
-}
-.boble {
-  background-color: rgba(255, 255, 255, 0.52);
-  width: 70px;
-  height: 70px;
-  color: #1ED500;
-  border-radius: 100px;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-}
-.hero-img {
-  width: 500px;
 
-}
-.tree-section{
-  position: absolute;
-  top: 200px;
-  left: 0px;
-}
-.hero-h1 {
-  width: 450px;
-  font-size: 50px;
-  margin-right: 70px;
-  margin-top: -75px;
-}
-.profile svg {
-  display: none;
-}
-.option-text-group {
-  display: none;
-}
-.comment-group{
-  position: absolute;
-  top: 100px;
-  left: 0px;
-}
-.comment {
-  height: 1020px;
-  display: flex;
-}
+  }
+  .tree-section{
+    position: absolute;
+    top: 200px;
+    left: 0px;
+  }
+  .hero-h1 {
+    width: 450px;
+    font-size: 50px;
+    margin-right: 70px;
+    margin-top: -75px;
+  }
+  .profile svg {
+    display: none;
+  }
+  .login-btn{
+    display: none;
+  }
+  .option-text-group {
+    display: none;
+  }
+  .comment-group{
+    position: absolute;
+    top: 100px;
+    left: 0px;
+  }
+  .comment {
+    height: 1020px;
+    display: flex;
+  }
 
 }
 @media (max-width : 950px) {
@@ -2375,6 +2468,9 @@ aside svg{
 }
 }
 @media (max-width : 850px) {
+  .detaile-container {
+    padding: 200px 50px;
+}
   footer p {
     font-size: 15px;
 }
@@ -2409,6 +2505,13 @@ aside svg{
 
 }
 @media (max-width : 750px) {
+  .adv-date{
+    font-size: 13px;
+    color: #333333a8;
+    position: absolute;
+    top: 300px;
+    left: 50px;
+}
   .column {
     width: 26px;
     position: absolute;
@@ -2503,6 +2606,23 @@ aside svg{
   left: 64px;
     position: absolute;
   }
+  .detaile-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+.detaile-sidebar {
+  width: 250px;
+  margin-right: 0px;
+  margin-top: 50px;
+}
+.detaile-sidebar div {
+  padding: 20px !important;
+}
+.detaile-sidebar {
+  width: 320px;
+}
   .box-left {
     top: 20px;
     left: -350px;
@@ -2568,13 +2688,20 @@ aside svg{
 }
 }
 @media (max-width : 550px) {
+  .detaile-container {
+    padding: 130px 50px;
+  }
+  .adv-date {
+    position: absolute;
+    top: 230px;
+  }
   .footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 10px 20px 5px 20px;
     flex-direction: column;
-}
+  }
   .comment-label {
     width: 330px;
     height: 100px;
@@ -2627,6 +2754,17 @@ aside svg{
 }
 }
 @media (max-width : 500px) {
+  .residential-group {
+    padding: 0;
+    padding-top: 60px;
+}
+  .categorie-radio {
+    padding-top: 100px;
+}
+  .radio-inputs {
+    display: flex;
+    flex-direction: column;
+}
   .comment-label {
     margin-top: 70px;
 }
@@ -2691,6 +2829,15 @@ aside svg{
 }
 
 @media (max-width : 460px) {
+  .adv-date {
+    position: absolute;
+    top: 230px;
+    left: 20px;
+    font-size: 13px;
+}
+  .detaile-container {
+    padding: 130px 20px;
+}
   .menu-img svg {
     width: 50px;
     height: 50px;

@@ -54,7 +54,7 @@ export default  function DetailsPage({data}) {
                   {location}
               </span>
             </div> 
-            <h3 style={{fontSize: '15px' , color: '#333333a8'}}>تاریخ انتشار : {getAdvTime()} پیش</h3>
+            <h3 className="adv-date" style={{fontSize: '15px' , color: '#333333a8'}}>تاریخ انتشار : {getAdvTime()} پیش</h3>
           </div>
             <h3 className='detaile-title'>توضیحات</h3>
           <p>{description}</p>

@@ -19,33 +19,36 @@ export default function FilterSession({setFilter , filter}){
                         <span className="radio-label">ویلا</span>
                     </span>
             </label>
-            <label onClick={clickHandler}>
-                <input  className="radio-input" type="radio" id="apartment" name="engine"/>
-                <span className="radio-tile">
-                    <span className="radio-icon">
-                    <MdApartment />
+            <div  className="filter-group">
+                <label onClick={clickHandler}>
+                    <input  className="radio-input" type="radio" id="apartment" name="engine"/>
+                    <span className="radio-tile">
+                        <span className="radio-icon">
+                        <MdApartment />
+                        </span>
+                        <span className="radio-label">آپارتمان</span>
                     </span>
-                    <span className="radio-label">آپارتمان</span>
-                </span>
-            </label>
-            <label onClick={clickHandler}>
-                <input  className="radio-input" type="radio" id="all" name="engine"/>
-                <span className="radio-tile">
-                    <span className="radio-icon">
-                    <BiAlignLeft />
+                </label>
+                <label onClick={clickHandler}>
+                    <input  className="radio-input" type="radio" id="all" name="engine"/>
+                    <span className="radio-tile">
+                        <span className="radio-icon">
+                        <BiAlignLeft />
+                        </span>
+                        <span className="radio-label">همه</span>
                     </span>
-                    <span className="radio-label">همه</span>
-                </span>
-            </label>
-            <label onClick={clickHandler}>
-                <input className="radio-input" type="radio" id="store" name="engine"/>
-                <span className="radio-tile">
-                    <span className="radio-icon">
-                    <BiStore />
+                </label>
+                <label onClick={clickHandler}>
+                    <input className="radio-input" type="radio" id="store" name="engine"/>
+                    <span className="radio-tile">
+                        <span className="radio-icon">
+                        <BiStore />
+                        </span>
+                        <span className="radio-label">مغازه</span>
                     </span>
-                    <span className="radio-label">مغازه</span>
-                </span>
-            </label>
+                </label>
+            
+            </div>
             <label onClick={clickHandler}>
                 <input className="radio-input" type="radio" id="office" name="engine"/>
                 <span className="radio-tile">

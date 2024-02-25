@@ -1,8 +1,10 @@
 'use client'
 
 import {FaUserAlt} from 'react-icons/fa'
+import HamburgerMenu from './hamburgerMenu';
 
 export default function NavOption({session}){
+
     return(
         <>
             
@@ -11,9 +13,8 @@ export default function NavOption({session}){
                     <a href="/buy-residential" className="option-text">آگهی ها</a>
                     <a href="/dashboard/add" className="option-text">ثبت آگهی من</a>
                     <a href="#info" className="option-text">ارتباط با ما</a>
-                    
                 </div>
-             
+                <HamburgerMenu />
              {
              !session ?
                 <a href="/signin">
@@ -24,12 +25,7 @@ export default function NavOption({session}){
                 </a>
                 :<a href="/dashboard" className="profile"><FaUserAlt /></a>
             }
-             
            </div>
-        
-
         </>
-        
     )
-
-        }
+}

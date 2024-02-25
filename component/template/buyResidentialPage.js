@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Card from "../module/card";
 import FilterSession from "../module/filterSession";
 import TitleHeader from "../module/titleHeader";
+import { BiMenu } from "react-icons/bi";
+import HamburgerMenu from "../module/hamburgerMenu";
 
 export default function BuyResidentialPage({PublishedAdv}){
     let [filter , setFilter] = useState({
@@ -38,7 +40,7 @@ export default function BuyResidentialPage({PublishedAdv}){
     
 }
 return (
-        <div className="bg-dashboard-color">
+        <div className="bg-adv-color">
             <header className="header">
                 <TitleHeader title={"آگهی ها"} img={'home'}/>
                 <div className="header-option">
@@ -47,6 +49,7 @@ return (
                     <a href="/dashboard" className="option-text">داشبورد</a>
                     <a href="/dashboard/add" className="option-text">ثبت اگهی</a>
                 </div>
+                <HamburgerMenu />
             </div> 
             </header>
             <FilterSession filter={filter} setFilter={setFilter}/>
@@ -55,7 +58,7 @@ return (
                 {
                     filteredAdv.length == 0 ? 
                     <div className="noadv-text-image">
-                        <h2 className="no-adv">متاسفانه آگهی با این دسنه بندی وجود ندارد</h2>
+                        <h2 className="no-adv">متاسفانه آگهی با این دسته بندی وجود ندارد!</h2>
                         <img width={300} src="/image/noadv.png"/>
                     </div>
                     : 

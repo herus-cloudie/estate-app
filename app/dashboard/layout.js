@@ -1,6 +1,7 @@
 
 
 import AsideText from "@/component/module/asideText"
+import HamburgerMenu from "@/component/module/hamburgerMenu"
 import LogOut from "@/component/module/logout"
 import TitleHeader from "@/component/module/titleHeader"
 import ConnectDataBase from "@/utils/connectDataBase"
@@ -26,16 +27,17 @@ export default async function DashboardLayout({children}){
                         <a href="/" className="option-text">صفحه اصلی</a>
                         <a href="/buy-residential" className="option-text">آگهی ها</a>
                     </div>
+                    <HamburgerMenu />
                 </div>
+                
             </header>
             <aside>
                 <div className="profile-dash">
                     <CgProfile />
-                    <p>ادمین</p>
                     {user.role == 'ADMIN' ?
-                    <p>{session?.user.email}</p>
+                        <p>ادمین</p>
                     : null}
-                    
+                    <p>{session?.user.email}</p>
                 </div>
                 <div className="column-dashboard"/>
                 {

@@ -14,7 +14,6 @@ export default async function HomePage(){
             <header className="header">
                 <TitleHeader title={'املاک مسلمی'} img={'home'}/>
                 <NavOption session={await Session()}/>
-                <div className="menu-img"><BiMenu /></div>
             </header>
             <main className="hero">
                 <h1 className="hero-h1">خرید , فروش  و اجاره املاک مسلمی</h1>
