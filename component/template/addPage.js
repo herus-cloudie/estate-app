@@ -21,7 +21,7 @@ import BtnTwo from "../module/btnTwo";
 
 export default function AddPage({adv}){
     useEffect(() => {
-        if(adv) setAdvertisementData({...adv , transaction : adv.price == null ? "rent" : "sale"})
+        if(adv) setAdvertisementData({...adv})
     }, [])
     const [loading , setLoading] = useState(false)
     const [advertisementData , setAdvertisementData] = useState({
@@ -30,8 +30,8 @@ export default function AddPage({adv}){
         location: "",
         phone: "",
         meterage: "",
-        rent: "",
-        mortgage: "",
+        rent: 0,
+        mortgage: 0,
         price: "",
         realState: "",
         category: "",
