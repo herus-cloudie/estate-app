@@ -20,7 +20,7 @@
 .menu-close-img svg {
   width: 50px;
   height: 50px;
-  margin-top: -80px;
+  margin-top: 50px;
   padding-left: 5px;
   color: white;
 }
@@ -36,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   font-size: 20px;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .bg-dashboard-color{
   background: #b4b4b48a;
@@ -98,6 +98,7 @@
 .option-group{
   display: flex;
   width: 260px;
+  padding: 60px 0px;
   justify-content: space-between;
 }
 .header-option-text{
@@ -1056,18 +1057,18 @@ footer p{
     gap: 15px;
 }
 
-aside{
-  width: 250px;
+aside {
+  width: 200px;
   display: flex;
   height: 530px;
-  background-color: #151515;
+  background-color: #1d1d1dfa;
   position: fixed;
   right: 0px;
-  align-items: flex-start;
   border-radius: 50px 0 0 20px;
   top: 150px;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: flex-start;
 }
 aside a{
   padding-right: 40px;
@@ -1128,11 +1129,13 @@ aside svg{
 }
 
 .dashboard-text{
+  padding: 20px 0;
   color: #000000;
   font-size: 20px;
   font-family: 'lightVazir';
 }
 .join-date{
+  margin-bottom: 30px;
   display: flex;
   gap: 5px;
   font-family: 'normalVazir';
@@ -1303,10 +1306,14 @@ aside svg{
     margin-top: 50px;
 }
 .addadvertisement-loading{
-  position: absolute;
-  top: 1150px;
-  right: 70px;
+    margin-top: 60px;
+    margin-right: 50px;
 }
+.addadvertisement-loading .loader{
+  width: 50px;
+  height: 50px;
+}
+
 .addadvertisement:hover{
   font-family: 'normalVazir';
     border: none;

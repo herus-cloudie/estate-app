@@ -23,7 +23,7 @@ export default function AddPage({adv}){
     useEffect(() => {
         if(adv) setAdvertisementData({...adv})
     }, [])
-    const [loading , setLoading] = useState(false)
+    const [loading , setLoading] = useState(true)
     const [advertisementData , setAdvertisementData] = useState({
         title: "",
         description: "",
