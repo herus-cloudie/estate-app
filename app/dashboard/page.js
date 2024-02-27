@@ -8,4 +8,5 @@ export default async function Dashboard(){
     await ConnectDataBase()
     let user = await UserEstate.findOne({email : (await Session())?.user.email})
     return <DashboardPage user={user}/>
+    
 }

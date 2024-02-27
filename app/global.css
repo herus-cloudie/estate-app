@@ -1060,6 +1060,7 @@ footer p{
 aside {
   width: 200px;
   display: flex;
+  
   height: 530px;
   background-color: #1d1d1dfa;
   position: fixed;
