@@ -28,7 +28,7 @@ export default function Card(adv) {
         <span className="meterage">{sp(meterage)} متر</span>
       </div>
       {
-        price ?
+        price != null ?
         <>
           <span >قیمت کل : {sp(price)} تومان</span>
           <span >هر متر : {sp(Math.round(price / meterage))} تومان</span>

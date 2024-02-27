@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 
-export default function SendAdvertisement({advertisementData , setAdvertisementData , setLoading , text}){
+export default function SendAdvertisement({advertisementData , setLoading , text}){
     let {
     title,
     description,
@@ -40,11 +40,7 @@ export default function SendAdvertisement({advertisementData , setAdvertisementD
         } 
     } 
 }
-        function checkDataValidation(){
-            if(!title || !description || !location || !phone || !meterage || !realState || !category) return toast.warn('لظفا مقادیر را کامل وارد کنید')
-            else if(transaction == 'price' && !price) return toast.warn('لظفا قیمت را وارد کنید')
-            else if(transaction == 'rent' && !mortgage) return toast.warn('لظفا قیمت وارد کنید')
-        }
+
     const editAdvertisment = async () => {
         if(!title || !description || !location || !phone || !meterage || !realState || !category) return toast.warn('لظفا مقادیر را کامل وارد کنید')
         else if(transaction == 'price' && !price) return toast.warn('لظفا قیمت را وارد کنید')
