@@ -61,19 +61,19 @@ export default function FilterSession({setFilter , filter}){
         </div>
         </div>
         <div className="transaction-group">
-                    <div class="customCheckBoxHolder">
-                        <input onClick={() => setFilter({...filter , rent : !filter.rent})} type="checkbox" id="1" class="customCheckBoxInput"/>
-                        <label for="1" class="customCheckBoxWrapper">
-                            <div class="customCheckBox">
-                                <div class="inner">اجاره</div>
+                    <div className="customCheckBoxHolder">
+                        <input onClick={() => setFilter({...filter , rent : !filter.rent})} type="checkbox" id="1" className="customCheckBoxInput"/>
+                        <label htmlFor="1" className="customCheckBoxWrapper">
+                            <div className="customCheckBox">
+                                <div className="inner">اجاره</div>
                             </div>
                         </label>
                     </div>
-                    <div class="customCheckBoxHolder">
-                        <input onClick={() => setFilter({...filter , sale : !filter.sale})} type="checkbox" id="2" class="customCheckBoxInput"/>
-                        <label for="2" class="customCheckBoxWrapper">
-                            <div class="customCheckBox">
-                                <div class="inner">خرید</div>
+                    <div className="customCheckBoxHolder">
+                        <input onClick={() => setFilter({...filter , sale : !filter.sale})} type="checkbox" id="2" className="customCheckBoxInput"/>
+                        <label htmlFor="2" className="customCheckBoxWrapper">
+                            <div className="customCheckBox">
+                                <div className="inner">خرید</div>
                             </div>
                         </label>
                     </div>

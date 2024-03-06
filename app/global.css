@@ -40,7 +40,7 @@
 }
 .bg-dashboard-color{
   background: #b4b4b48a;
-  min-height: 2000px;
+  min-height: 3502px;
 }
 .bg-adv-color{
   background: #b4b4b48a;
@@ -1435,6 +1435,7 @@ aside svg{
 .card-title {
   font-family: 'normalVazir';
   font-weight: 400;
+  line-height: 120%;
   margin: 10px 0px 20px 0px;
 }
 
@@ -3053,7 +3054,7 @@ aside svg{
 }
 .email {
   position: relative;
-  left: -208px;
+  left: -180px;
 }
   .year {
     color: #FFF;
@@ -3262,7 +3263,7 @@ aside svg{
   }
   .email {
     position: relative;
-    left: -182px;
+    left: -160px;
   }
   .network {
     width: 30px;

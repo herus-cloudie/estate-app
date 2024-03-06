@@ -11,7 +11,6 @@ export default function Card(adv) {
      adv = _doc
   }
   let { _id, category, title, location, price ,  meterage , rent , mortgage} = adv;
-    
   return (
     <div className='card-container'>
       <div className='card-icon'>

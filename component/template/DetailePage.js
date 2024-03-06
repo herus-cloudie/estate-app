@@ -10,13 +10,9 @@ import { icons } from "@/constant/const";
 
 import ItemList from "../module/itemList";
 import TitleHeader from "../module/titleHeader";
-import BookMark from "../module/bookmark";
 import ShareButton from "../module/shareButton";
 
 import { sp } from "@/utils/changeFormat";
-import { useEffect, useState } from "react";
-
-
 
 export default function DetailsPage({data}) { 
   let {
@@ -33,42 +29,21 @@ export default function DetailsPage({data}) {
         meterage,
         rent ,
         mortgage,
-        _id
       } = data;
 
-  let [checked , setChecked] = useState()
-  useEffect(() => {
-    async function checkIfAlreadyBookmarked(){
-      let progress = await fetch('/api/bookmark')
-      let Data = await progress.json()
-      let ifBookedBefore = Data.data.find(item => item._id == _id)
-      if(ifBookedBefore) setChecked(true)
-      else setChecked(false)
-    }
-    checkIfAlreadyBookmarked()
-  } , [])
+
     function getAdvTime(){
       const now = new Date();
       const created = new Date(data.createdAt);
-
-      const minute = Math.floor(( now - created) / 1000 / 60);
+      
+      const minute = Math.floor((now - created) / 1000 / 60);
       if(minute < 60) return minute + ' دقیقه';
       const hour = Math.floor(( now - created) / 1000 / 60 / 60);
       if(hour < 24) return hour + ' ساعت';
       const day = Math.floor(( now - created) / 1000 / 60 / 60 / 24);
-      return day + ' ساعت';
+      return day + ' روز';
     }
 
-
-      const bookMarkHandler = async () => {
-        let progress = await fetch('/api/bookmark' , {
-          method : 'PATCH',
-          body : JSON.stringify(data),
-          headers : {'Content-Type' : 'application/json'}
-        })
-        let Data = await progress.json()
-        // setChecked(Data.data)
-      }
   return ( 
     <div className="detaile-bg"> 
       <header className="header">
@@ -86,10 +61,6 @@ export default function DetailsPage({data}) {
             </div> 
             
             <div className="bookmard-and-data">
-                <div onClick={bookMarkHandler} className="bookmark-text">
-                  <p style={{cursor:'pointer' , marginLeft: '10px' , fontSize: '16px' , color: 'darkgray'}}>ذخیره آگهی</p>
-                  <BookMark checked={checked} />
-                </div>
                 <h3 className="adv-date" style={{fontSize: '15px' , color: '#333333a8'}}>تاریخ انتشار : {getAdvTime()} پیش</h3>
             </div>
 
