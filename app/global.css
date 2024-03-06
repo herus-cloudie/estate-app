@@ -927,7 +927,7 @@ a{
   height: 35px;
   position: relative;
   top: 148px;
-  left: -157px;
+  left: -135px;
 }
 .linkedin {
   width: 70px;
@@ -2847,6 +2847,54 @@ aside svg{
 }
 }
 @media (max-width : 500px) {
+  .linkedin {
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 10px;
+    background: rgba(20, 28, 219, 1);
+    position: relative;
+    top: 210px;
+    left: 0px;
+  }
+  .linkedin-text{
+    position: absolute;
+    font-size: 28px;
+    top: 6px;
+    left: 14px;
+  }
+  
+  .github{
+      width: 50px;
+      height: 50px;
+      display: block;
+      top: 160px;
+      left: 110px;
+      position: relative;
+  }
+  .github-text {
+    position: relative;
+    top: 12px;
+    left: -13px;
+    width: 27px;
+  }
+  .telegram {
+    width: 50px;
+    height: 50px;
+    top: 110px;
+    left: -110px;
+    display: block;
+    border-radius: 10px;
+    background: rgb(48, 55, 255);
+    position: relative;
+  }
+  .telegram-text {
+    position: relative;
+    top: 12px;
+    width: 26px;
+    left: -14px;
+  }
+  
   .radios {
     margin-left: 60px;
 }

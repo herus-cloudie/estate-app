@@ -51,7 +51,7 @@ export default async function HomePage(){
                     <div className="comment-body first-comment">
                         <img src="/image/me1.png" className="comment-body-first" />
                         <div className="head-text">حامد زنگنه</div>
-                        <div className="body-text top"><p>عالیه , پشتیبانی حرفه ای و سریع لذت خرید و فروش رو دوچندان میکنه</p></div>
+                        <div className="body-text top"><p>عالیه. پشتیبانی حرفه ای و سریع , لذت خرید و فروش رو دوچندان میکنه</p></div>
                     </div>
                     
                     <div className="comment-body second-comment">
@@ -69,7 +69,7 @@ export default async function HomePage(){
                     </div>
                     <div>
                         <div>
-                            <p>herus2006crypto@gmail.com</p>
+                            <p>herus_cloudie@yahoo.com</p>
                             <img src="/icon/email.png" className="email" />
                         </div>
                         <a href="https://linkedin.com/in/amirmohammad-moslemi" className="linkedin"><div className="linkedin-text">in</div></a>
