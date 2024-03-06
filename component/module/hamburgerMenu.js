@@ -12,11 +12,15 @@ export default function HamburgerMenu({session}){
             <div className={`menu-close ${menuStatus ? 'menu-open' : null}`}>
                 <div onClick={() => setMenuStatus(false)} className='menu-close-img'><BsXLg/></div>
                 <div className="option-group">
-                    <a href="/buy-residential" className="option-text">آگهی ها</a>
-                    <a href="/dashboard/add" className="option-text">ثبت آگهی من</a>
+                    <a href="/" className="option-text">صفحه اصلی</a>
+                    <a href="/dashboard/" className="option-text">پنل کاربری</a>
+                </div>
+                <div style={{flexDirection: 'column', alignItems : 'center'}} className="option-group">
+                    <a  href="/buy-residential" className="option-text">آگهی ها</a>
+                    
                 </div>
                 <div className="option-group">
-                    <a href="/dashboard/" className="option-text">پنل کاربری</a>
+                    <a href="/dashboard/add" className="option-text">ثبت آگهی</a>
                     <a href="/dashboard/myAdv" className="option-text">آگهی های من</a> 
                 </div>
                 {
