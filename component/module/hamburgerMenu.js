@@ -15,7 +15,7 @@ export default function HamburgerMenu({session}){
                     <a href="/" className="option-text">صفحه اصلی</a>
                     <a href="/dashboard/" className="option-text">پنل کاربری</a>
                 </div>
-                <div style={{flexDirection: 'column', alignItems : 'center'}} className="option-group">
+                <div style={{flexDirection: 'column', alignItems : 'center' , padding: '40px 0px'}} className="option-group">
                     <a  href="/buy-residential" className="option-text">آگهی ها</a>
                     
                 </div>
