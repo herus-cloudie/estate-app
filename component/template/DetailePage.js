@@ -1,29 +1,25 @@
+'use client'
+
 import { SiHomebridge } from "react-icons/si";
 import { AiOutlinePhone } from "react-icons/ai";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiCalendarCheck } from "react-icons/bi";
-// import { e2p, sp } from "@/utils/changeFormat";
-// import ShareButton from "@/module/ShareButton";
-import { icons } from "@/constant/const"; 
-import ItemList from "../module/itemList";
+
 import { categories } from "@/constant/const";
+import { icons } from "@/constant/const"; 
+
+import ItemList from "../module/itemList";
 import TitleHeader from "../module/titleHeader";
+import BookMark from "../module/bookmark";
+import ShareButton from "../module/shareButton";
+
 import { sp } from "@/utils/changeFormat";
+import { useEffect, useState } from "react";
 
 
-export default  function DetailsPage({data}) {
-    function getAdvTime(){
-      const now = new Date();
-      const created = new Date(data.createdAt);
 
-      const minute = Math.floor(( now - created) / 1000 / 60);
-      if(minute < 60) return minute + ' دقیقه';
-      const hour = Math.floor(( now - created) / 1000 / 60 / 60);
-      if(hour < 24) return hour + ' ساعت';
-      const day = Math.floor(( now - created) / 1000 / 60 / 60 / 24);
-      return day + ' ساعت';
-    }
-    let {
+export default function DetailsPage({data}) { 
+  let {
         title,
         location,
         description,
@@ -36,9 +32,43 @@ export default  function DetailsPage({data}) {
         constructionDate,
         meterage,
         rent ,
-        mortgage
+        mortgage,
+        _id
       } = data;
 
+  let [checked , setChecked] = useState()
+  useEffect(() => {
+    async function checkIfAlreadyBookmarked(){
+      let progress = await fetch('/api/bookmark')
+      let Data = await progress.json()
+      let ifBookedBefore = Data.data.find(item => item._id == _id)
+      if(ifBookedBefore) setChecked(true)
+      else setChecked(false)
+    }
+    checkIfAlreadyBookmarked()
+  } , [])
+    function getAdvTime(){
+      const now = new Date();
+      const created = new Date(data.createdAt);
+
+      const minute = Math.floor(( now - created) / 1000 / 60);
+      if(minute < 60) return minute + ' دقیقه';
+      const hour = Math.floor(( now - created) / 1000 / 60 / 60);
+      if(hour < 24) return hour + ' ساعت';
+      const day = Math.floor(( now - created) / 1000 / 60 / 60 / 24);
+      return day + ' ساعت';
+    }
+
+
+      const bookMarkHandler = async () => {
+        let progress = await fetch('/api/bookmark' , {
+          method : 'PATCH',
+          body : JSON.stringify(data),
+          headers : {'Content-Type' : 'application/json'}
+        })
+        let Data = await progress.json()
+        // setChecked(Data.data)
+      }
   return ( 
     <div className="detaile-bg"> 
       <header className="header">
@@ -54,7 +84,15 @@ export default  function DetailsPage({data}) {
                   {location}
               </span>
             </div> 
-            <h3 className="adv-date" style={{fontSize: '15px' , color: '#333333a8'}}>تاریخ انتشار : {getAdvTime()} پیش</h3>
+            
+            <div className="bookmard-and-data">
+                <div onClick={bookMarkHandler} className="bookmark-text">
+                  <p style={{cursor:'pointer' , marginLeft: '10px' , fontSize: '16px' , color: 'darkgray'}}>ذخیره آگهی</p>
+                  <BookMark checked={checked} />
+                </div>
+                <h3 className="adv-date" style={{fontSize: '15px' , color: '#333333a8'}}>تاریخ انتشار : {getAdvTime()} پیش</h3>
+            </div>
+
           </div>
             <h3 className='detaile-title'>توضیحات</h3>
           <p>{description}</p>
@@ -72,7 +110,7 @@ export default  function DetailsPage({data}) {
               {phone}
             </span>
           </div>
-          {/* <ShareButton /> */}
+          <ShareButton />
           <div className='detaile-price'>
             <p>
               {icons[category]}

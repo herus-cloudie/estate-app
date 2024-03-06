@@ -46,7 +46,7 @@ export async function DELETE(req) {
     if(!user) return NextResponse.json({status : 'faild' , message : 'please log in at first'} , {status : 422})
     if(user.role != 'ADMIN') return NextResponse.json({status : 'faild' , message : 'just admin are available'} , {status : 422})
 
-    user.mailBox.push(`متاسفانه اگهی شما با عنوان  ${selectedAdv.title } توسط ادمین رد شد`)
+    user.mailBox.push(`متاسفانه آگهی شما با عنوان  ${selectedAdv.title } توسط ادمین رد شد`)
     await user.save()
 
     await Advertisement.deleteOne({_id})

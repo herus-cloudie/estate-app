@@ -1,7 +1,7 @@
 import LogOut from "../module/logout";
 
 export default function DashboardPage({user}){
-    console.log(user)
+
     return(
         <div className="dashboard-text-group">
             <h3 className="dashboard-title">خوش آمدید 👋</h3>

@@ -21,7 +21,6 @@ export default function BuyResidentialPage({PublishedAdv}){
     
     function filteringByCategory(){
         if(filter.category == 'all' || filter.category == '') {
-            console.log(filter.category )
             if(!filter.rent && !filter.sale) setFilterAdv(PublishedAdv)
             else if(filter.rent && filter.sale) setFilterAdv(PublishedAdv)
             else if(!filter.rent && filter.sale) setFilterAdv(filteredAdv.filter(item => item.rent == null))
@@ -47,7 +46,7 @@ return (
                 <div className="option-text-group" >
                     <a href="/" className="option-text">صفحه اصلی</a>
                     <a href="/dashboard" className="option-text">داشبورد</a>
-                    <a href="/dashboard/add" className="option-text">ثبت اگهی</a>
+                    <a href="/dashboard/add" className="option-text">ثبت آگهی</a>
                 </div>
                 <HamburgerMenu />
             </div> 
@@ -62,7 +61,7 @@ return (
                         <img width={300} src="/image/noadv.png"/>
                     </div>
                     : 
-                    filteredAdv?.map(adv => <Card {...adv}/>)
+                    filteredAdv?.map(adv => <Card key={adv._id} {...adv}/>)
                 }
             </div>
         </div>

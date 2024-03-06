@@ -34,12 +34,11 @@ export default function SendAdvertisement({advertisementData , setLoading , text
         setLoading(false)
         
         let data = await progress.json()
-        console.log(data)
             
         
         if(data.status == 'success') { 
             router.push('/dashboard/myAdv')      
-            toast.success('اگهی با موفقیت ثبت شد')
+            toast.success('آگهی با موفقیت ثبت شد')
         } 
     
     }
@@ -61,7 +60,6 @@ export default function SendAdvertisement({advertisementData , setLoading , text
         setLoading(false)
         
         let data = await progress.json()
-        console.log(data)
             
         if(data.status == 'success') {
             router.push('/dashboard/myAdv')
@@ -70,7 +68,7 @@ export default function SendAdvertisement({advertisementData , setLoading , text
 
     return(
         <>
-            <button className="addadvertisement" onClick={text == 'ثبت اگهی' ? addAdvertisement : editAdvertisment}>{text}</button>
+            <button className="addadvertisement" onClick={text == 'ثبت آگهی' ? addAdvertisement : editAdvertisment}>{text}</button>
             <ToastContainer />
         </>
     )

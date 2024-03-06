@@ -19,7 +19,7 @@ const categories = {
 };
 
 const inputsInfo = [
-  {title : 'عنوان اگهی' , name : 'title'},
+  {title : 'عنوان آگهی' , name : 'title'},
   {title : 'متراژ' , name : 'meterage'},
   {title : 'آدرس' , name : 'location'},
   {title : 'شماره تماس' , name : 'phone'},

@@ -17,7 +17,7 @@ export default function HamburgerMenu({session}){
                 </div>
                 <div className="option-group">
                     <a href="/dashboard/" className="option-text">پنل کاربری</a>
-                    <a href="/dashboard/myAdv" className="option-text">اگهی های من</a> 
+                    <a href="/dashboard/myAdv" className="option-text">آگهی های من</a> 
                 </div>
                 {
                     session == 'ADMIN' ?  <a href="/dashboard/expect" style={{padding:' 40px 0px;'}} onClick={() => setMenuStatus(false)} className="option-text"> آگهی در انتظار تایید</a> : null

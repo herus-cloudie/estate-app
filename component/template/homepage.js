@@ -36,7 +36,7 @@ export default async function HomePage(){
                     </div>
                     <div className="box-left">
                         <img className="box-left-img" src="/image/key.png"/>
-                        <Link href={'/buy-residential'}> <BtnOne className='left' text='دیدن اگهی'/> </Link>
+                        <Link href={'/buy-residential'}> <BtnOne className='left' text='دیدن آگهی'/> </Link>
                     </div>
                 </div>
             </div>

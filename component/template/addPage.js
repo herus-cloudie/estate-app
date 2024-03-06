@@ -23,7 +23,7 @@ export default function AddPage({adv}){
     useEffect(() => {
         if(adv) setAdvertisementData({...adv})
     }, [])
-    const [loading , setLoading] = useState(true)
+    const [loading , setLoading] = useState(false)
     const [advertisementData , setAdvertisementData] = useState({
         title: "",
         description: "",
@@ -47,7 +47,7 @@ export default function AddPage({adv}){
         setAdvertisementData({...advertisementData , constructionDate : date})
     }
     const inputsInfo = [
-        {title : 'عنوان اگهی' , name : 'title'},
+        {title : 'عنوان آگهی' , name : 'title'},
         {title : 'متراژ' , name : 'meterage'},
         {title : 'آدرس' , name : 'location'},
         {title : 'شماره تماس' , name : 'phone'},
@@ -67,7 +67,7 @@ export default function AddPage({adv}){
     return(
         <div className="fix-transaction">
             {
-                adv ? <h3 className="dashboard-title add-title-2"><BsFillPencilFill />ویرایش اگهی</h3> 
+                adv ? <h3 className="dashboard-title add-title-2"><BsFillPencilFill />ویرایش آگهی</h3> 
                 : <h3 className="dashboard-title add-title-2"><VscDiffAdded />ثبت آگهی جدید</h3>
             }
             <>
@@ -137,7 +137,7 @@ export default function AddPage({adv}){
 
                     {
                         loading ? <div className="addadvertisement-loading"><Loading /></div>
-                        : <SendAdvertisement text={adv ? 'ویرایش' : 'ثبت اگهی'} setAdvertisementData={setAdvertisementData} advertisementData={advertisementData} setLoading={setLoading}/>
+                        : <SendAdvertisement text={adv ? 'ویرایش' : 'ثبت آگهی'} setAdvertisementData={setAdvertisementData} advertisementData={advertisementData} setLoading={setLoading}/>
                     }
 
             </div>

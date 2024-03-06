@@ -31,7 +31,7 @@ export default function DashboardCard({adv , greenText , redText , role}){
         })
         
         let Data = await progress.json()
-        toast.info('اگهی مدنظر حذف شد')
+        toast.info('آگهی مدنظر حذف شد')
         setFaildLoading(false)
         router.refresh()
     }
@@ -45,7 +45,6 @@ export default function DashboardCard({adv , greenText , redText , role}){
         
         let Data = await progress.json()
         if(Data.status == 'success') toast.success('آگهی با موفقیت تایید شد')
-        console.log(Data)
         setConfirmLoading(false)
         router.refresh()
     }
@@ -60,7 +59,6 @@ export default function DashboardCard({adv , greenText , redText , role}){
         let Data = await progress.json()
         toast.info('آگهی با موفقیت رد شد')
         setFaildLoading(false)
-        console.log(Data)
         router.refresh()
     }
     return(
